@@ -4,12 +4,13 @@ My personal resume.
 
 ## Converting to PDF
 
-To convert the LaTeX file into PDF you will need to have `pdflatex` installed.
+To convert the LaTeX file into PDF you will need to have **Docker** and **make**
+installed.
 
 Run:
 
 ```
-pdflatex cv.tex
+make
 ```
 
 This will generate a lot of files, amongst which you should find a PDF file.
