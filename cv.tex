@@ -18,6 +18,9 @@
 % Fontawesome is used for the cool icons used throughout the CV
 \usepackage{fontawesome}
 
+% 1st, 2nd, etc
+\usepackage[super]{nth}
+
 % Our names are utf8
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -43,154 +46,174 @@
 
 \begin{document}
 \begin{center}
-\pagenumbering{gobble} % Turn off page numbering
+  \pagenumbering{gobble} % Turn off page numbering
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%% NAME AND INFO %%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%% NAME AND INFO %%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% If the \Huge size is too small for a particular use, link below should be consulted
-% https://en.wikibooks.org/wiki/LaTeX/Fonts#Arbitrary_font_size
-{
-\Huge
-\scshape
-Stanko Krtalić Rusendić
-}
+  % If the \Huge size is too small for a particular use, link below should be consulted
+  % https://en.wikibooks.org/wiki/LaTeX/Fonts#Arbitrary_font_size
+  {
+    \Huge
+    \scshape
+    Stanko Krtalić Rusendić
+  }
 
-\innersectionspacing
+  \innersectionspacing
 
-% There are many other cool icons or social networks or contact info that could be used here
-{
-{\large\faHome} Zagreb, Croatia
-\hspace{16pt}
-{\large\faEnvelope} \href{mailto:stanko.krtalic@gmail.com}{\texttt{stanko.krtalic@gmail.com}}
+  % There are many other cool icons or social networks or contact info that could be used here
+  \begin{tabular}{ l l l }
 
-% {\large\faGlobe} \href{https://stanko.xyz}{\texttt{stanko.xyz}}
-\hspace{16pt}
-{\large\faGithub} \href{https://www.github.com/Stankec}{\texttt{/Stankec}}
-\hspace{16pt}
-{\large\faLinkedin} \href{https://www.linkedin.com/in/stanko-krtalic}{\texttt{/in/stanko-krtalic}}
-}
+    {\large\faHome} Zagreb, Croatia &
+    {\large\faPhone} \href{tel:+385993737000}{\texttt{+385993737000}} &
+    {\large\faEnvelope} \href{mailto:hey@stanko.io}{\texttt{hey@stanko.io}} \\
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%% EDUCATION %%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    {\large\faGlobe} \href{http://stanko.io}{\texttt{stanko.io}} &
+    {\large\faLinkedin} \href{https://www.linkedin.com/in/stanko-krtalic}{\texttt{linkedin.com/in/stanko-krtalic}} &
+    {\large\faGithub} \href{https://www.github.com/stankec}{\texttt{github.com/stanko}}
 
-\section{Education}
-% \begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
-% \gray {\scshape Degree} & \textbf{Master of Aerospace Engineering} \\
-% \gray {\scshape University} & \textbf{University of City X} \hfill City X, Country \\
-% \gray {\scshape Period} & \textbf{October 2015 --- July 2017} (expected)
-% \end{tabular}
+  \end{tabular}
 
-% \innersectionspacing
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%% WORK EXPERIENCE %%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
-\gray {\scshape Degree} & \textbf{Bachelor of Science in Computing} (Major in Telecommunications) \\
-\gray {\scshape University} & \textbf{Faculty of Electrical Engineering and Computing} \hfill University of Zagreb \\
-\gray {\scshape Period} & \textbf{October 2011 --- present (expected October 2017)} \\
-\tablerule Extracurricular & President of KSET - the faculty's student club.
-Managed the club's day-to-day operations, handled communication with
-stakeholders, designed and managed events that impacted over 5000 students.
-\end{tabular}
+  % The table's code may be a bit tedious to read.
+  % An option is to make \newcommand for the row entries, but
+  % this way offers more flexibility which I personally did use.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%% WORK EXPERIENCE %%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Paragraph width factors were determined experimentally, sadly.
+  \section{Work Experience}
+  \begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
+    \gray {\scshape Employer} & \textbf{Floating Point} \hfill Zagreb, Croatia \\
+    \gray {\scshape Period} & \textbf{Feb 2017 --- present} \\
+    \gray {\scshape Job Title} & \textbf{Software Engineer} \\
+    \tablerule & Introduced continuos deployment and delivery into the company's
+    processes, and worked as a consultant on software products for the US market.
+  \end{tabular}
 
-% The table's code may be a bit tedious to read.
-% An option is to make \newcommand for the row entries, but
-% this way offers more flexibility which I personally did use.
+  \innersectionspacing
 
-% Paragraph width factors were determined experimentally, sadly.
-\section{Work Experience}
-\begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
-\gray {\scshape Employer} & \textbf{Q Alliance} \hfill Zagreb, Croatia \\
-\gray {\scshape Period} & \textbf{Sep 2016 --- present} \\
-\gray {\scshape Job Title} & \textbf{Ruby on Rails Engineer} \\
-\tablerule & Worked with teams to create innovative solutions that extend the
-functionality of regular email.
-\end{tabular}
+  \begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
+    \gray {\scshape Employer} & \textbf{Juvo - Home friend} \hfill Zagreb, Croatia \\
+    \gray {\scshape Period} & \textbf{Nov 2016 --- May 2017} (7 months)\\
+    \gray {\scshape Job Title} & \textbf{Hardware Engineer} \\
+    \tablerule & Designed and developed the first iteration of the company's core
+    product,vthe sensor which is used to detect children on the move in household
+    settings.
+  \end{tabular}
 
-\innersectionspacing
+  \innersectionspacing
 
-\begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
-\gray {\scshape Employer} & \textbf{Infinum} \hfill Zagreb, Croatia \\
-\gray {\scshape Period} & \textbf{Jan 2013 --- Sep 2016} \\
-\gray {\scshape Job Title} & \textbf{Ruby on Rails Engineer}\\
-\tablerule & Worked with teams and individually on various applications ranging
-from personal websites to highly reliable solutions for the pharmaceutical
-industry.
-\end{tabular}
+  \begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
+    \gray {\scshape Employer} & \textbf{Q Alliance} \hfill Zagreb, Croatia \\
+    \gray {\scshape Period} & \textbf{Sep 2016 --- Feb 2017} (6 months)\\
+    \gray {\scshape Job Title} & \textbf{Ruby on Rails Engineer} \\
+    \tablerule & As a consultant I worked directly with international clients such
+    as Lufthansa in order to design and implement various software solutions.
+  \end{tabular}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%% PROJECTS %%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \innersectionspacing
 
-\section{Projects}
-\begin{flushleft}
-\textbf {\href{https://github.com/dono-app}{\underline{Dono}}} [Swift]\\
-Created the
-\href{https://github.com/dono-app/dono-linux/tree/develop}{\underline{Linux client}} and
-improved the
-\href{https://github.com/dono-app/dono-macos}{\underline{Mac client}} for the Dono stateless
-password manager \\
-\vspace{2mm}
+  \begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
+    \gray {\scshape Employer} & \textbf{Infinum} \hfill Zagreb, Croatia \\
+    \gray {\scshape Period} & \textbf{Jan 2014 --- Sep 2016} (2.5 years)\\
+    \gray {\scshape Job Title} & \textbf{Ruby on Rails Engineer}\\
+    \tablerule & Worked with teams and individually on various applications ranging
+    from personal websites to highly reliable solutions for the pharmaceutical
+    industry.
+  \end{tabular}
 
-\textbf{\href{https://itunes.apple.com/us/app/eug-2016/id1126963997?mt=8}{\underline{European Universities Games 2016 Mobile Applications}}} [Objective-C]\\
-Created and maintained the iOS application and the backend application \\
-\vspace{2mm}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%% PROJECTS %%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textbf{\href{https://tvornica-snova.hr}{\underline{Tvornica Snova}}} [Ruby]\\
-Architected and implemented the backend application which offers a full
-self-publishing solution similar to Microsoft's Word or Powerpoint.
-This includes a wrapper around ImageMagick that enables PDF generation in the
-CMYK colorspace and a horizontally self-scaling PDF generator. \\
-\vspace{2mm}
+  \section{Projects \& Talks}
+  \begin{flushleft}
+    \textbf{\href{https://2017.webcampzg.org/talks/developing-a-safer-web-with-rust/}{\underline{Developing a Safer Web with Rust}}}\\
+    At WebCamp Zagreb 2017, held a talk about the benefits of using Rust to build web services.
+    \vspace{2mm}
 
-\textbf{\href{https://brokenships.com}{\underline{Museum of Broken Relationships}}} [Ruby]\\
-Architected and implemented the backend solution. The backend for this application
-is a pure, JSON::API standardised, API backend that is consumed by the
-React / Redux frontend. \\
-\vspace{2mm}
+    \textbf {\href{https://github.com/stankec/kappa}{\underline{Kappa}}} [Ruby, Docker]\\
+    Created an open-source tool for executing AWS lambda functions outside of AWS. The project got 60+ stars on GitHub.
+    \vspace{2mm}
 
-\textbf{\href{https://github.com/izuzak/FRISCjs}{\underline{FRISC.js}}} [JavaScript]\\
-Contributed to an online processor simulator that executes assembly written for
-the FRISC processor \\
-\vspace{2mm}
+    \textbf{\href{https://play.google.com/store/apps/details?id=com.eug2016.android}{\underline{European Universities Games 2016 Mobile Applications}}} [Objective-C, Ruby]\\
+    Created and maintained the iOS application and the backend application. \\
+    \vspace{2mm}
 
-\textbf{\href{https://github.com/Stankec/PPJ}{\underline{PPJ}}} [Java]\\
-Contributed to a C-to-FRISC-bytecode compiler \\
-\end{flushleft}
+    \textbf{\href{https://www.mrgoodknight.de/}{\underline{Mr. Good Knight}}} [Ruby]\\
+    Designed and implemented the backend application which offers a full
+    self-publishing solution similar to Microsoft's Word or Powerpoint.
+    This includes a wrapper around ImageMagick that enables PDF generation in the
+    CMYK colorspace and a horizontally self-scaling PDF generator. \\
+    \vspace{2mm}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%% ACTIVITIES %%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \textbf{\href{https://brokenships.com}{\underline{Museum of Broken Relationships}}} [Ruby]\\
+    Designed and implemented a JSON::API standardised API backend that is
+    consumed by a React / Redux frontend. \\
+    \vspace{2mm}
 
-\section{Awards}
-\begin{tabular}{ >{\hfill}p{0.346\textwidth} p{0.608\textwidth} }
-\textbf{Dean's award 2016} & For academic community service work \\
-\textbf{UniverziJaDa 2016} & 1st place for best mobile app \\
-\textbf{Copenhacks 2016} & 1st place for project that adds PGP encryption to
-Facebook's Messenger \\
-\textbf{Agrokor - Inovacijom do poslovne prilike 2015} & 1st place as most
-innovative mobile app \\
-\textbf{AppStart Contest 2014} & 3rd place for innovative mobile app solution \\
-\end{tabular}
+    % \textbf{\href{https://github.com/izuzak/FRISCjs}{\underline{FRISC.js}}} [JavaScript]\\
+    % Contributed to an online processor simulator that executes assembly written for
+    % the FRISC processor \\
+    % \vspace{2mm}
+
+    % \textbf{\href{https://github.com/Stankec/PPJ}{\underline{PPJ}}} [Java]\\
+    % Contributed to a C-to-FRISC-bytecode compiler \\
+  \end{flushleft}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%% EDUCATION %%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \section{Education}
+  % \begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
+  % \gray {\scshape Degree} & \textbf{Master of Aerospace Engineering} \\
+  % \gray {\scshape University} & \textbf{University of City X} \hfill City X, Country \\
+  % \gray {\scshape Period} & \textbf{October 2015 --- July 2017} (expected)
+  % \end{tabular}
+
+  % \innersectionspacing
+
+  \begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
+    \gray {\scshape Pursuing} & \textbf{Bachelor of Science in Telecommunications and Informatics} \\
+    \gray {\scshape University} & \textbf{Faculty of Electrical Engineering and Computing} \hfill University of Zagreb \\
+    \gray {\scshape Period} & \textbf{October 2011 --- present (expected October 2018)} \\
+    \tablerule Extracurricular & President of KSET - the faculty's student club.
+    Managed the club's day-to-day operations, handled communication with
+    stakeholders, designed and managed events that impacted over 5000 students.
+  \end{tabular}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%% SKILLS %%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%% ACTIVITIES %%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Skills}
-\begin{tabular}{ >{\hfill}p{0.346\textwidth} p{0.608\textwidth} }
-\textbf{Programming Languages} & Ruby, Rust, Objective-C, Swift, Elixir,
-JavaScript, Java, C \\
-\textbf{Spoken Languages} & Croatian native, English C1, German C1,
-Swedish B2 \\
-\end{tabular}
+  \section{Awards}
+  \begin{tabular}{ >{\hfill}p{0.346\textwidth} p{0.608\textwidth} }
+    \textbf{AppStart Contest 2017, \nth{1} place} & for Sumirra.com, a smart financial assistant \\
+    \textbf{Dean's award 2016} & for organising JobFair, the biggest job fair in Croatia \\
+    \textbf{UniverziJaDa 2016, \nth{1} place} & for mobile apps for the European University Games \\
+    \textbf{Copenhacks 2016, \nth{1} place} & for project that adds PGP encryption to Facebook's Messenger \\
+    \textbf{Agrokor - 2015, \nth{1} place} & for mTisak Foto Print, an app for ordering photo prints\\
+    \textbf{AppStart Contest 2014, \nth{3} place} & for Jukebox, a crowdsourced music player \\
+  \end{tabular}
+
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%% SKILLS %%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  % \section{Skills}
+  % \begin{tabular}{ >{\hfill}p{0.346\textwidth} p{0.608\textwidth} }
+  %   \textbf{Programming Languages} & Ruby, Rust, Objective-C, Swift, Elixir,
+  %   JavaScript, Java, C \\
+  %   \textbf{Spoken Languages} & Croatian native, English C1, German C1,
+  %   Swedish B2 \\
+  % \end{tabular}
 
 \end{center}
 \end{document}
